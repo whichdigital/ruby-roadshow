@@ -2,6 +2,19 @@ require_relative '../src/darts'
 
 RSpec.describe Darts do
 
+  describe "#score" do
+    it "returns the sum of all the line scores" do
+      scorecard = '5
+                   double 10
+                   triple 20
+                   25
+                   double 17
+                   50'
+      darts = Darts.new(scorecard)
+      expect(darts.score).to eq(194)
+    end
+  end
+
   describe "#line_score" do
 
     context "when the number in the line is between 1 and 20" do

@@ -3,7 +3,14 @@ class Darts
   VALID_SINGLES = (1..20).to_a << 25 << 50
   VALID_NON_SINGLES = (1..20).to_a
 
-  def initialize
+  def initialize(scorecard = '')
+    @scorecard = scorecard
+  end
+
+  def score
+    @scorecard.split("\n")
+      .map {|l| line_score(l)}
+      .reduce(:+)
   end
 
   def line_score(line)
