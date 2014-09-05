@@ -8,6 +8,7 @@ Please help save the day by writing some code to decrypt the following messages:
 
 NINJR ARRQG BZRRG GBQVF PHFFB HECYN AFCYR NFRER CYLON PXJVG UNGVZ RNAQY BPNGV BAVSR NEGUN GBHEP BZZHA VPNGV BAVFO RVATZ BAVGB ERQFB CYRNF RHFRN PNRFN EPVCU RESBE LBHEE RCYLJ RYYHF RLBHE OVEGU QNLNF GURXR LKKKK
 
+Note: Please try not to use existing gems or online forms to solve this problem. We can't trust them and we fear the NSA may be listening. You'll have to implement your own solution.
 
 ## Extensions
 
