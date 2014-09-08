@@ -11,6 +11,9 @@ class CodeBreaker
   private
 
   def codeBreak
+    if @input_text == ""
+      raise ArgumentError.new('Please input some values')
+    end
     str_chars = @input_text.split("").map { |ch| ch.ord }
     str_chars.map! do
       |ch| if ch >= 97 and ch <= 122
