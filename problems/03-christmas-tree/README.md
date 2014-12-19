@@ -67,7 +67,7 @@ c) Implement an #ancestors method:
 nipping_node.ancestors.map do |node|
   node.value
 end
-#=> ["on", "roasting", "chestnuts"]
+#=> ["open", "roasting", "chestnuts"]
 ```
 
 ---
