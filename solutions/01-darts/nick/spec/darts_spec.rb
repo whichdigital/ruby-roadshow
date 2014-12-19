@@ -50,12 +50,12 @@ describe Darts do
 
    it 'entering an invalid digit with the double phrase' do
       score = 'double 25'
-      expect { Darts.calculate(score) }.to raise_error(ArgumentError, "Incorrect use of double, triple - You can only use double or triple on a digit with in the range 1-20: #{score}")
+      expect { Darts.calculate(score) }.to raise_error(ArgumentError, "Incorrect use of double or triple - You can only use double or triple on a digit with in the range 1-20: #{score}")
    end
 
    it 'entering an invalid digit with the triple phrase' do
       score = 'triple 50'
-      expect { Darts.calculate(score) }.to raise_error(ArgumentError, "Incorrect use of double, triple - You can only use double or triple on a digit with in the range 1-20: #{score}")
+      expect { Darts.calculate(score) }.to raise_error(ArgumentError, "Incorrect use of double or triple - You can only use double or triple on a digit with in the range 1-20: #{score}")
    end
 
    it 'calculate the total for the example' do

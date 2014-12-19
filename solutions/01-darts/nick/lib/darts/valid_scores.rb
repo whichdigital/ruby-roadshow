@@ -38,7 +38,7 @@ module Darts::Valid_Scores
   def self.check_valid_multiplier(line)
     begin
       unless Darts.get_int(line).between?(1,20)
-        raise ArgumentError, "Incorrect use of double, triple - You can only use double or triple on a digit with in the range 1-20: #{line}"
+        raise ArgumentError, "Incorrect use of double or triple - You can only use double or triple on a digit with in the range 1-20: #{line}"
       end
     rescue ArgumentError => e
       puts e
