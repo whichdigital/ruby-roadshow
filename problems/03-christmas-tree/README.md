@@ -10,7 +10,7 @@ Write a program that builds a festive-themed tree.
 Here's an example usage:
 
 ```ruby
-tree = Tree.parse("
+tree = Tree.parse('
 
               chestnuts
                /     \
@@ -22,7 +22,7 @@ tree = Tree.parse("
                             / \
                           your nose
 
-")
+')
 
 root = tree.root
 root.value
@@ -50,13 +50,13 @@ end
 b) Add in support for comments when describing trees:
 
 ```ruby
-tree = Tree.parse("
+tree = Tree.parse('
 
           on
          /  \
        your  nose  # Ouch!
 
-")
+')
 ```
 
 ---
