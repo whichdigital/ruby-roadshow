@@ -13,11 +13,11 @@ Here's an example usage:
 tree = Tree.parse('
 
               chestnuts
-               /     \
-          roasting    on
-           /    \       \
-         an     open     fire
-        /  \       \        \
+              /     \
+          roasting   on
+          /    \       \
+        an     open     fire
+        / \       \        \
       jack frost   nipping  on
                             / \
                           your nose
