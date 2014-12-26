@@ -76,4 +76,33 @@ describe Tree do
       expect(child.children).to be_empty
     end
   end
+
+  it "works for extension c in the readme" do
+    tree = Tree.parse('
+
+                  chestnuts
+                  /     \
+              roasting   on
+              /    \       \
+            an     open     fire
+            / \       \        \
+          jack frost   nipping  on
+                                / \
+                              your nose
+
+    ')
+
+    chestnuts = tree.root
+    roasting = chestnuts.children.first
+    open = roasting.children.last
+    nipping = open.children.first
+
+    expect(nipping.value).to eq("nipping")
+    expect(nipping.ancestors).to be_an(Enumerator)
+
+    result = nipping.ancestors.map do |node|
+      node.value
+    end
+    expect(result).to eq(["open", "roasting", "chestnuts"])
+  end
 end

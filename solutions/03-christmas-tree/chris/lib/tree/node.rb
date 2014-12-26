@@ -12,6 +12,15 @@ class Tree::Node
     end
   end
 
+  def ancestors
+    Enumerator.new do |y|
+      if parent
+        y.yield(parent)
+        parent.ancestors.each { |a| y.yield(a) }
+      end
+    end
+  end
+
   protected
 
   attr_writer :parent
