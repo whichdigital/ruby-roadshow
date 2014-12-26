@@ -21,4 +21,30 @@ describe Tree::Parser do
     expect(root.children.last.value).to eq("child2")
   end
 
+  it "raises helpful errors if it fails to parse" do
+    expect {
+      described_class.parse('
+            foo
+                   \
+                   bar
+      ')
+    }.to raise_error(Tree::Parser::InvalidInputError, /bar/)
+
+    expect {
+      described_class.parse('
+            foo
+              \
+                   bar
+      ')
+    }.to raise_error(Tree::Parser::InvalidInputError, /foo/)
+
+    expect {
+      described_class.parse('
+            foo
+                   \
+              bar
+      ')
+    }.to raise_error(Tree::Parser::InvalidInputError, /parent or child/)
+  end
+
 end

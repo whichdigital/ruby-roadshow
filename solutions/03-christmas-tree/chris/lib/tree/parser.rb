@@ -9,11 +9,11 @@ class Tree::Parser
 
   def parse
     nodes = relationships.map do |parent, children|
-      node = Tree::Node.new(parent[:word])
-      node.children = children.map do |child|
-        Tree::Node.new(child[:word])
+      Tree::Node.new(parent[:word]).tap do |node|
+        node.children = children.map do |child|
+          Tree::Node.new(child[:word])
+        end
       end
-      node
     end
 
     Tree.new(nodes.first)
@@ -28,8 +28,12 @@ class Tree::Parser
     words.each { |w| hash[w] = [] }
     edges.each do |edge|
       parent = parent_for(edge)
+      child = child_for(edge)
+
+      raise_if_missing(edge, parent, child)
+
       hash[parent] ||= []
-      hash[parent] << child_for(edge)
+      hash[parent] << child
     end
     hash
   end
@@ -111,4 +115,20 @@ class Tree::Parser
     end
   end
 
+  def raise_if_missing(edge, parent, child)
+    if parent && child
+      return
+    elsif parent
+      err = "Could not find the child of '#{parent[:word]}'"
+    elsif child
+      err = "Could not find the parent of '#{child[:word]}'"
+    else
+      err = "Could not find the parent or child"
+    end
+
+    err += " for the edge at (#{edge[:x]},#{edge[:y]})"
+    raise InvalidInputError, err
+  end
+
+  class InvalidInputError < StandardError; end
 end
