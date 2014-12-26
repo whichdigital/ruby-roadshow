@@ -8,6 +8,7 @@ class Tree::Parser
   end
 
   def parse
+    strip_comments
     root = words.first
     Tree.new(node_for(root))
   end
@@ -15,6 +16,10 @@ class Tree::Parser
   private
 
   attr_reader :string
+
+  def strip_comments
+    string.gsub!(/#[^\n]*/, "")
+  end
 
   def node_for(word)
     children = relationships[word] || []
@@ -126,7 +131,7 @@ class Tree::Parser
       err = "Could not find the parent or child"
     end
 
-    err += " for the edge at (#{edge[:x]},#{edge[:y]})"
+    err += " for the edge '#{edge[:word]}' at (#{edge[:x]},#{edge[:y]})"
     raise InvalidInputError, err
   end
 
