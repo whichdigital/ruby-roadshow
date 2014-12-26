@@ -8,25 +8,26 @@ class Tree::Parser
   end
 
   def parse
-    nodes = relationships.map do |parent, children|
-      Tree::Node.new(parent[:word]).tap do |node|
-        node.children = children.map do |child|
-          Tree::Node.new(child[:word])
-        end
-      end
-    end
-
-    Tree.new(nodes.first)
+    root = words.first
+    Tree.new(node_for(root))
   end
 
   private
 
   attr_reader :string
 
+  def node_for(word)
+    children = relationships[word] || []
+
+    Tree::Node.new(word[:word]).tap do |node|
+      node.children = children.map do |child|
+        node_for(child)
+      end
+    end
+  end
+
   def relationships
-    hash = {}
-    words.each { |w| hash[w] = [] }
-    edges.each do |edge|
+    @relationships ||= edges.each.with_object({}) do |edge, hash|
       parent = parent_for(edge)
       child = child_for(edge)
 
@@ -35,7 +36,6 @@ class Tree::Parser
       hash[parent] ||= []
       hash[parent] << child
     end
-    hash
   end
 
   def words

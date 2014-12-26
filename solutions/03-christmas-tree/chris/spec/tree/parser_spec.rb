@@ -21,6 +21,22 @@ describe Tree::Parser do
     expect(root.children.last.value).to eq("child2")
   end
 
+  it "parses complex trees" do
+    tree = described_class.parse('
+            root
+           /    \
+        child1  child2
+         /   \
+        gc1  gc2
+    ')
+
+    root = tree.root
+    child1 = root.children.first
+
+    expect(child1.children.first.value).to eq("gc1")
+    expect(child1.children.last.value).to eq("gc2")
+  end
+
   it "raises helpful errors if it fails to parse" do
     expect {
       described_class.parse('

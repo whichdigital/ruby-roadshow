@@ -23,5 +23,11 @@ describe Tree do
       child.value
     end
     expect(result).to eq(["roasting", "on"])
+
+    roasting = root.children.first
+    result = roasting.children.map do |child|
+      child.value
+    end
+    expect(result).to eq(["an", "open"])
   end
 end
