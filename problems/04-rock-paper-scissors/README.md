@@ -98,4 +98,5 @@ Write a 'Goldfish' player that remembers the last three choices of its opponent
 and chooses accordingly. Take care to not violate the public interface of
 classes. This information should be inferred from #winner and #loser methods.
 
-Write your own player(s) that can beat everyone else.
+Write your own player(s) that can beat everyone else. Players that 'cheat' by
+reaching out into other objects will be disqualified.
