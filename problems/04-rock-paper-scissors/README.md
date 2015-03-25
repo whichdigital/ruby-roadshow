@@ -3,6 +3,8 @@
 Write an application that pits players against each other in a ferocious game of
 rock-paper-scissors.
 
+![Rock, Paper, Scissors](http://images.sciencedaily.com/2013/02/130219161246-large.jpg)
+
 Note: This challenge is unique in that all contributors should work on the same
 `shared/` implementation.
 
