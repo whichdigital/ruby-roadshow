@@ -60,7 +60,7 @@ A tournament should respond to the following methods:
 Sets the players of the tournament
 
 #next_game
-Runs games through to completion and returns the score
+Runs a game through to completion and returns the score
 
 #in_progress?
 Returns true if there are games that are yet to be played
