@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+puts "3..."
+sleep 1
+
+puts "2..."
+sleep 1
+
+puts "1..."
+sleep 1
+
+puts
+puts "Uh oh, no one implemented anything yet :-("
