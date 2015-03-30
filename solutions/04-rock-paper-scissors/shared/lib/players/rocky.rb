@@ -1,0 +1,2 @@
+class Rocky < Player
+end

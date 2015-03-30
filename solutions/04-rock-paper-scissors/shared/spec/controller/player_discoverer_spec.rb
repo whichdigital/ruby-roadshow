@@ -1,6 +1,7 @@
 require "spec_helper"
 require "controller"
-require_relative "../../players/rocky"
+require "players/player"
+require "players/rocky"
 
 RSpec.describe Controller::PlayerDiscoverer do
 

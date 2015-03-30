@@ -1,11 +1,11 @@
-$LOAD_PATH << "players"
+$LOAD_PATH << "lib/players"
 
 module Controller
   module PlayerDiscoverer
     class << self
 
       def players
-        Dir["players/*"].map do |path|
+        Dir["lib/players/*"].map do |path|
           player = File.basename(path).gsub(".rb", "")
 
           require player
