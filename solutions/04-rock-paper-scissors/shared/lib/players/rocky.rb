@@ -1,5 +1,4 @@
 class Rocky < Player
-
   def choice
     choices[rand(10)]
   end
