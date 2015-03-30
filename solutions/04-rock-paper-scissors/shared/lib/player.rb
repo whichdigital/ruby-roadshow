@@ -7,7 +7,7 @@ class Player
   end
 
   def choice
-    choices[rand(0)]
+    choices[rand(3)]
   end
 
   private
