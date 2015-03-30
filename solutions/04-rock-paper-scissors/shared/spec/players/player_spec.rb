@@ -10,4 +10,16 @@ RSpec.describe Player do
     end
   end
 
+  describe "#winner" do
+    it "is not implemented" do
+      expect{subject.winner}.to raise_error
+    end
+  end
+
+  describe "#loser" do
+    it "is not implemented" do
+      expect{subject.loser}.to raise_error
+    end
+  end
+
 end

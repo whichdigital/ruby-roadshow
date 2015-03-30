@@ -10,6 +10,14 @@ class Player
     choices[rand(3)]
   end
 
+  def winner
+    raise NotImplementedError("subclasses should implement this")
+  end
+
+  def loser
+    raise NotImplementedError("subclasses should implement this")
+  end
+
   private
 
   def choices
