@@ -11,11 +11,11 @@ class Player
   end
 
   def winner
-    raise NotImplementedError("subclasses should implement this")
+    "#{name wins!}"
   end
 
   def loser
-    raise NotImplementedError("subclasses should implement this")
+    "#{name looses!}"
   end
 
   private

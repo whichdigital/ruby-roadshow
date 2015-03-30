@@ -11,14 +11,14 @@ RSpec.describe Player do
   end
 
   describe "#winner" do
-    it "is not implemented" do
-      expect{subject.winner}.to raise_error
+    it "is what the player says when wins" do
+      expect(subject.winner).to eq("Bob wins!")
     end
   end
 
   describe "#loser" do
-    it "is not implemented" do
-      expect{subject.loser}.to raise_error
+    it "is what the player says when looses" do
+      expect(subject.loser).to eq("Bob looses!")
     end
   end
 
